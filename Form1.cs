@@ -23,5 +23,33 @@ namespace GeoGrid_test
             geoGrid1.SetFixedRows(3);
 
         }
+
+        void getCellCoords()
+        {
+            lbRow.Text = geoGrid1.CurrentCell.RowIndex.ToString();
+            lbCol.Text = geoGrid1.CurrentCell.ColumnIndex.ToString();
+            Application.DoEvents();
+        }
+
+
+        private void geoGrid1_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            //getCellCoords();
+        }
+
+        private void geoGrid1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            //getCellCoords();
+        }
+
+        private void geoGrid1_NewRowNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            //getCellCoords();
+        }
+
+        private void geoGrid1_CurrentCellChanged(object sender, EventArgs e)
+        {
+            //getCellCoords();
+        }
     }
 }

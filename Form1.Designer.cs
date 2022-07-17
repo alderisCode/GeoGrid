@@ -30,6 +30,10 @@ namespace GeoGrid_test
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbRow = new System.Windows.Forms.Label();
+            this.lbCol = new System.Windows.Forms.Label();
             this.geoGrid1 = new GeoGrid_test.GeoGrid();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +42,7 @@ namespace GeoGrid_test
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.geoGrid1)).BeginInit();
             this.SuspendLayout();
@@ -52,9 +57,52 @@ namespace GeoGrid_test
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.geoGrid1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.lbCol);
+            this.splitContainer1.Panel2.Controls.Add(this.lbRow);
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Wiersz";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Kolumna";
+            // 
+            // lbRow
+            // 
+            this.lbRow.AutoSize = true;
+            this.lbRow.Location = new System.Drawing.Point(77, 21);
+            this.lbRow.Name = "lbRow";
+            this.lbRow.Size = new System.Drawing.Size(13, 13);
+            this.lbRow.TabIndex = 2;
+            this.lbRow.Text = "0";
+            // 
+            // lbCol
+            // 
+            this.lbCol.AutoSize = true;
+            this.lbCol.Location = new System.Drawing.Point(77, 44);
+            this.lbCol.Name = "lbCol";
+            this.lbCol.Size = new System.Drawing.Size(13, 13);
+            this.lbCol.TabIndex = 3;
+            this.lbCol.Text = "0";
             // 
             // geoGrid1
             // 
@@ -104,6 +152,8 @@ namespace GeoGrid_test
             this.Name = "Form1";
             this.Text = "Form1";
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.geoGrid1)).EndInit();
@@ -120,6 +170,10 @@ namespace GeoGrid_test
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Label lbCol;
+        private System.Windows.Forms.Label lbRow;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
