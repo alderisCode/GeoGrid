@@ -20,7 +20,7 @@ namespace GeoGrid_test
             //gg.Parent = splitContainer1.Panel1;
             //gg.Dock = DockStyle.Fill;
 
-            //geoGrid1.SetFixedRows(3);
+            geoGrid1.SetFixedRows(3);
             geoGrid1.ReadOnlyColumnBackground = Color.LavenderBlush;
             geoGrid1.Columns[4].DefaultCellStyle.BackColor = Color.LightSteelBlue;
 

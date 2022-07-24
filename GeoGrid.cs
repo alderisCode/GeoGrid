@@ -63,14 +63,24 @@ namespace GeoGrid_test
             }
         }
 
+        protected override void OnRowEnter(DataGridViewCellEventArgs e)
+        {
+            base.OnRowEnter(e);
+            if (this.Columns[e.ColumnIndex].ReadOnly)
+
+            {
+                SendKeys.Send("{ENTER}");
+            }
+
+        }
 
         protected override void OnGotFocus(EventArgs e)
         {
             base.OnGotFocus(e);
-            if (this.CurrentCell.ReadOnly)
-            {
-                SendKeys.Send("{ENTER}");
-            }
+            //if (this.CurrentCell.ReadOnly)
+            //{
+            //    SendKeys.Send("{ENTER}");
+            //}
         }
 
 
