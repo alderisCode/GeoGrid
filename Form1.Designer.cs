@@ -29,6 +29,9 @@ namespace GeoGrid_test
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.geoGrid1 = new GeoGrid_test.GeoGrid();
             this.lbCol = new System.Windows.Forms.Label();
@@ -37,9 +40,11 @@ namespace GeoGrid_test
             this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -74,9 +79,11 @@ namespace GeoGrid_test
             this.geoGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
+            this.Column6,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.Column7});
             this.geoGrid1.Location = new System.Drawing.Point(12, 12);
             this.geoGrid1.Name = "geoGrid1";
             this.geoGrid1.Size = new System.Drawing.Size(776, 242);
@@ -121,29 +128,49 @@ namespace GeoGrid_test
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Column1";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "ReadOnly";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Column2";
+            this.Column2.HeaderText = "Pierwsza";
             this.Column2.Name = "Column2";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Druga";
+            this.Column6.Name = "Column6";
             // 
             // Column3
             // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column3.HeaderText = "ReadOnly";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Column4";
+            this.Column4.HeaderText = "Trzecia";
             this.Column4.Name = "Column4";
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Column5";
+            this.Column5.HeaderText = "Czwarta";
             this.Column5.Name = "Column5";
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column7.FillWeight = 120F;
+            this.Column7.HeaderText = "TylkoDoOdczytu";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // Form1
             // 
@@ -173,9 +200,11 @@ namespace GeoGrid_test
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }
 

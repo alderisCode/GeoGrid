@@ -18,7 +18,7 @@ namespace GeoGrid_test
             {
                 if (this.CurrentCell.ColumnIndex < ColumnCount - 1)
                 {
-                    for (int i= this.CurrentCell.ColumnIndex+1; i<ColumnCount; i++)
+                    for (int i=this.CurrentCell.ColumnIndex+1; i<ColumnCount; i++)
                     {
                         if (!this.Rows[this.CurrentCell.RowIndex].Cells[i].ReadOnly)
                         {
@@ -27,19 +27,23 @@ namespace GeoGrid_test
                         }
                     }
                 }
-                else
+                
+                try
                 {
-                    try
+                    for (int i = 0; i < ColumnCount; i++)
                     {
-                        this.CurrentCell = this.Rows[this.CurrentCell.RowIndex + 1].Cells[0];
-                        return true;
+                        if (!this.Rows[this.CurrentCell.RowIndex + 1].Cells[i].ReadOnly)
+                        {
+                            this.CurrentCell = this.Rows[this.CurrentCell.RowIndex + 1].Cells[i];
+                            return true;
+                        }
                     }
-                    catch (ArgumentOutOfRangeException ex)
-                    {
-                        return true;
-                    }
-
                 }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    return true;
+                }
+
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -58,6 +62,17 @@ namespace GeoGrid_test
                 }
             }
         }
+
+
+        protected override void OnGotFocus(EventArgs e)
+        {
+            base.OnGotFocus(e);
+            if (this.CurrentCell.ReadOnly)
+            {
+                SendKeys.Send("{ENTER}");
+            }
+        }
+
 
         public void SetFixedRows(int rCount)
         {
